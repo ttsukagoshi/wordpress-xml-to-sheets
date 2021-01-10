@@ -4,7 +4,9 @@
     <base target="_top">
   </head>
   <body>
-    <input type="file">      
-    <button onclick="alert('Clicked');">Upload</button> 
+    <form>
+      <input name="xmlFile" type="file"> 
+      <button onclick="google.script.run.xmlParse(this.parentNode);">Upload</button> 
+    </form>
   </body>
 </html>
