@@ -12,6 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-function myFunction() {
-  
+function onOpen() {
+
+}
+
+function showDialog() {
+  var html = HtmlService.createHtmlOutputFromFile('dialog');
+  SpreadsheetApp.getUi().showModalDialog(html, "Upload XML");
 }
