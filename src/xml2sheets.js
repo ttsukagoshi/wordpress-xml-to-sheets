@@ -12,11 +12,22 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-function onOpen() {
+/* exported onOpen, showDialog, xmlParse */
 
+function onOpen() {
+  SpreadsheetApp.getUi()
+    .createMenu('XML to Sheets')
+    .addItem('Parse XML', 'showDialog')
+    .addToUi();
 }
 
 function showDialog() {
-  var html = HtmlService.createHtmlOutputFromFile('dialog');
-  SpreadsheetApp.getUi().showModalDialog(html, "Upload XML");
+  var html = HtmlService.createHtmlOutputFromFile('src/dialog');
+  SpreadsheetApp.getUi().showModalDialog(html, 'Upload XML');
+}
+
+function xmlParse(form) {
+  var blob = form.xmlFile;
+  Logger.log(`File "${blob.getName()}" retrieved.`); // log
+  Logger.log(blob.getContentType()); // test
 }
