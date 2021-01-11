@@ -26,6 +26,7 @@ globals:
   FormApp: readonly
   GmailApp: readonly
   HtmlService: readonly
+  Logger: readonly
   MailApp: readonly
   PropertiesService: readonly
   ScriptApp: readonly
