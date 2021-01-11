@@ -36,6 +36,7 @@ globals:
   SpreadsheetApp: readonly
   UrlFetchApp: readonly
   Utilities: readonly
+  XmlService: readonly
 
 
 ###############
