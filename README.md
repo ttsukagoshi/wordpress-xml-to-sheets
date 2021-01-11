@@ -1,1 +1,2 @@
 # xml-to-google-sheets
+[![GitHub Super-Linter](https://github.com/ttsukagoshi/xml-to-google-sheets/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter) [![Total alerts](https://img.shields.io/lgtm/alerts/g/ttsukagoshi/xml-to-google-sheets.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/ttsukagoshi/xml-to-google-sheets/alerts/)

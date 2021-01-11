@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <base target="_top">
+  <title>Upload WordPress XML</title>
+</head>
+
+<body>
+  <form>
+    <input name="xmlFile" type="file" accept="text/xml">
+    <button onclick="uploadFile(this.parentNode);">Upload</button>
+  </form>
+  <div id="loading" style="color:red"></div>
+  <script>
+    function uploadFile(fileForm) {
+      // Loading message
+      document.getElementById('loading').textContent = 'Please wait while XML file is being processed... This dialog will close automatically.';
+      // Parse XML file
+      // Copied from https://stackoverflow.com/a/60748334/14833774
+      const file = fileForm.xmlFile.files[0];
+      const fr = new FileReader();
+      fr.onload = function (e) {
+        const obj = {
+          name: file.name,
+          mimeType: file.type,
+          bytes: [...new Int8Array(e.target.result)]
+        };
+        google.script.run.withSuccessHandler(function () {
+          google.script.host.close();
+          alert('Upload successful.');
+        }).withFailureHandler(function() {
+          google.script.host.close();
+          alert('Upload terminated with error. Check log.');
+        }).parseWpXml(obj);
+      };
+      fr.readAsArrayBuffer(file);
+    }
+  </script>
+</body>
+
+</html>
