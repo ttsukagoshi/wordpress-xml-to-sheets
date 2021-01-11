@@ -1,2 +1,5 @@
 # clasp
 .clasp.json
+
+# macOS
+.DS_Store
